@@ -17,9 +17,7 @@ export default async function DashboardPage() {
 
   const { data: business } = await supabase
     .from("businesses")
-    .select(
-      "id, name, category, contact_person, phone_number, whatsapp_number, address, slug, google_review_url, keywords, default_language, default_tone"
-    )
+    .select("*")
     .eq("owner_id", user.id)
     .maybeSingle();
 

@@ -9,9 +9,7 @@ export default async function AdminBusinessesPage({ searchParams }) {
 
   let query = supabase
     .from("businesses")
-    .select(
-      "id, owner_id, name, category, contact_person, phone_number, whatsapp_number, address, google_review_url, slug, keywords, default_tone, default_language, plan, generations_used_this_month, created_at, updated_at"
-    )
+    .select("*")
     .order("created_at", { ascending: false })
     .limit(200);
 
